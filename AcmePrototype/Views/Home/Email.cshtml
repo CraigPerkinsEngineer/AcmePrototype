@@ -1,0 +1,45 @@
+﻿@model List<ProductViewModel>
+
+@{
+    ViewData["Title"] = "Email";
+}
+
+<h2>Email</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th style="padding-right:10px;">
+                Customer Id
+            </th>
+            <th style="padding-right:10px;">
+                Product Name
+            </th>
+            <th style="padding-right:10px;">
+                Domain
+            </th>
+            <th style="padding-right:10px;">
+                Email Date
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model.OrderBy(m => m.FinalEmailDate))
+        {
+            <tr>
+                <td style="padding-right:10px;">
+                    @product.CustomerId
+                </td>
+                <td style="padding-right:10px;">
+                    @product.ProductName
+                </td>
+                <td style="padding-right:10px;">
+                    @product.Domain
+                </td>
+                <td style="padding-right:10px;">
+                    @product.FinalEmailDate.ToShortDateString()
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

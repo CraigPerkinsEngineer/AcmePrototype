@@ -1,0 +1,14 @@
+﻿@model LoadProductsViewModel
+
+@{
+    ViewData["Title"] = "LoadProducts";
+}
+
+<h2>Load Products</h2>
+
+<form asp-action="LoadProducts" enctype="multipart/form-data">
+
+    <input asp-for="Products" />
+
+    <input type="submit" />
+</form>

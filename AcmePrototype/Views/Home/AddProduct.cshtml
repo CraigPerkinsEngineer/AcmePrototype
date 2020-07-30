@@ -1,0 +1,51 @@
+﻿@model ProductViewModel
+
+@{
+    ViewData["Title"] = "AddProduct";
+}
+
+<h2>Add Product</h2>
+
+@using (Html.BeginForm("AddProduct", "Home", FormMethod.Post,
+                                     new { enctype = "multipart/form-data" }))
+{
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(m => m.CustomerId)
+                </td>
+                <td>
+                    @Html.EditorFor(m => m.CustomerId)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(m => m.ProductName)
+                </td>
+                <td>
+                    @Html.EditorFor(m => m.ProductName)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(m => m.Domain)
+                </td>
+                <td>
+                    @Html.EditorFor(m => m.Domain)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(m => m.DurationMonths)
+                </td>
+                <td>
+                    @Html.EditorFor(m => m.DurationMonths)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button type="submit">Add</button>
+}
+
